@@ -1,29 +1,34 @@
-class Vowels{
-    
+package questions;
+
+class Vowels {
+
     public static void main(String[] args) {
-        
+        System.out.println("Number of vowels: " + countCharacters("Jam"));
     }
 
-    for(int i = 0; i < line.length(); ++i)
-    {
-        if(line[i]=='a' || line[i]=='e' || line[i]=='i' ||
-           line[i]=='o' || line[i]=='u' || line[i]=='A' ||
-           line[i]=='E' || line[i]=='I' || line[i]=='O' ||
-           line[i]=='U')
-        {
-            ++vowels;
+    static int countCharacters(String line) {
+
+        char[] charArr = line.toCharArray();
+        int vowels = 0;
+        int consonants = 0;
+        int digits = 0;
+        int spaces = 0;
+
+        for (char c : charArr) {
+            if (c == 'a' || c == 'e' || c == 'i' ||
+                    c == 'o' || c == 'u' || c == 'A' ||
+                    c == 'E' || c == 'I' || c == 'O' ||
+                    c == 'U') {
+                vowels++;
+            } else if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')) {
+                consonants++;
+            } else if (c >= '0' && c <= '9') {
+                digits++;
+            } else if (c == ' ') {
+                ++spaces;
+            }
         }
-        else if((line[i]>='a'&& line[i]<='z') || (line[i]>='A'&& line[i]<='Z'))
-        {
-            ++consonants;
-        }
-        else if(line[i]>='0' && line[i]<='9')
-        {
-            ++digits;
-        }
-        else if (line[i]==' ')
-        {
-            ++spaces;
-        }
+        return vowels;
     }
+
 }

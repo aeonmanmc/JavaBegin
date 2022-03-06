@@ -1,3 +1,5 @@
+package questions;
+
 class LetterToNum{
 
     public static void main(String[] args) {
